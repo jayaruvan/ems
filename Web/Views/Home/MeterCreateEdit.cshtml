@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "MetersCreateEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MetersCreateEdit</h2>
+        <h3><i class="fa fa-angle-right"></i> Add Meter To List</h3>
+
+        <div class="row mt">
+            <div class="col-sm-11 col-md-10 col-lg-9">
+                <div class="form-panel">
+                    <h4 class="mb">Add Meter</h4>
+
+                    <form class="" role="form"  >
+                        <div class="form-group-sm">
+                            <label class="control-label" for="Meter_name_1">Meter Name</label>
+                            <input type="text" class="form-control" id="Meter_name_1" data-bind='value: meter().Name'  placeholder="Meter Name">                            
+                        </div> <br/>
+                        <div class="form-group">
+                            <label class="control-label" for="Meter_serial_1">Meter Serial</label>
+                            <input type="text" class="form-control" id="Meter_serial_1" data-bind='value: meter().Serial'  placeholder="Meter Serial">
+                        </div><br/>
+                        <div class="form-group">
+                            <label class="control-label" for="Meter_serial_Feeder Point ">Meter Feeder Point</label>
+                            <input type="text" class="form-control" id="Meter_feder_point" data-bind='value: meter().FeederPoint'  placeholder="Meter Feeding Point ">
+                        </div>
+
+                        <div id="visibleBlock" data-bind="visible: saveMode">
+                            <label class="control-label" for="Meter_name_1">Location</label>
+                            <div class="form-group" >
+                            
+                                <select class="form-control"  
+                                    data-bind="options: ProvincesArray, optionsCaption:'Select Province', optionsText: 'Name', optionsValue: 'Id', value: selectedProvince"></select>
+                                <select class="form-control"  
+                                    data-bind="options: AreasArray, optionsCaption:'Select Area', optionsText: 'Name', optionsValue: 'Id', value: selectedArea, enable: AreasArray().length"></select>
+                            
+                                <select class="form-control"  
+                                    data-bind="options: SubStationsArray, optionsCaption:'Select Sub Station', optionsText: 'Name', optionsValue: 'Id', value: selectedSubSation, enable: SubStationsArray().length"></select>
+
+                            </div>
+
+                            <label class="control-label" for="Meter_Supplier_Name">Supplier</label>
+                            <div class="form-group">
+                                <select class="form-control"  
+                                    data-bind="options: SuppliersArray, optionsCaption:'Select Supplier', optionsText: 'Name', optionsValue: 'Id', value: selectedSupplier"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-submit" data-bind='click: SaveMeter'>Save</button>
+                        </div>
+                    </form>
+                    <br/>
+                    <button type="button" class="btn btn-default">Back to Meter List</button>
+                    <br/>
+                </div>
+                <!-- /form-panel -->
+            </div>
+            <!-- /col-lg-12 -->
+        </div>
+        <!-- /row --><script src="~/Scripts/ko/MeterCreateEdit.js"></script>

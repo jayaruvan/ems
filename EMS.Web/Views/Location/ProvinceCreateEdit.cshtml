@@ -1,0 +1,45 @@
+﻿<h3><i class="fa fa-angle-right"></i> Add Province To  List</h3>
+
+<div class="row mt">
+    <div class="col-sm-11 col-md-10 col-lg-9">
+        <div class="form-panel">
+            <h4 class="mb">Add Province</h4>
+
+
+<table class="table">
+        <tr>
+            <th colspan="3">Profile Information</th>
+        </tr>
+        <tr></tr>
+    <tbody data-bind='with: profile'>
+        <tr>
+            <td>
+                <input class="input-large" data-bind='value: ProvinceName'  placeholder="Province Name"/>
+            </td>
+ 
+        </tr>
+    </tbody>
+</table>
+
+
+        </div>
+        <!-- /form-panel -->
+    </div>
+    <!-- /col-lg-12 -->
+</div>
+<!-- /row -->
+
+<hr />
+<button class="btn btn-small btn-success" data-bind='click: SaveProvince'>Save Profile</button>
+<script src="http://localhost:6203/Scripts/ko/ProvinceCreateEdit.js"></script>
+
+
+<input class="btn btn-small btn-primary" type="button" value="Back To Profile List" data-bind="click:$root.BackToProvinceList" />
+
+
+<style>
+    .validationMessage {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>

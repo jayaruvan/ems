@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "AreaCreateEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<!-- row start -->
+<h3><i class="fa fa-angle-right"></i> AreaCreateEdit</h3>
+
+<div class="row mt">
+    <div class="col-sm-11 col-md-10 col-lg-9">
+        <div class="form-panel">
+            <h4 class="mb">Edit Area</h4>
+
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                     
+                    <div class="dropdown">                    
+                    <select data-bind= 'options: ProvinceNamesArray, 
+                        optionsText: "Name", optionsValue: "Id", value: selectedProvinceId'></select>
+                    </div>
+                                            
+                    <label class="control-label" for="Province_name">Area Name</label>
+
+                    <p data-bind="with: area">             
+                        <input type="text" class="form-control" data-bind='value: Name'  placeholder="Province Name"/>       
+                    </p>
+
+                </div>
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-submit" data-bind='click: SaveArea'>Save</button>
+
+                </div>
+            </form>
+            <br/>
+            <button type="button" class="btn btn-default" data-bind="click:$root.BackToProvinceList" >Back </button>
+
+            <br/>
+        </div>
+        <!-- /form-panel -->
+    </div>
+    <!-- /col-lg-12 -->
+</div>
+<!-- /row -->
+
+
+<style>
+    .validationMessage {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>
+
+<script src="~/Scripts/ko/AreaCreateEdit.js"></script>

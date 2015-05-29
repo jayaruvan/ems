@@ -1,0 +1,8 @@
+00 Sample Data/*
+bin/
+obj/
+TestResults/
+packages/
+
+wpn sp.sql
+DbStructure.PNG

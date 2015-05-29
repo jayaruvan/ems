@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "MeterReadingDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MeterReadingDetails</h2>
+
+
+<div class="col-sm-11 col-md-10 col-lg-9">
+                <div class="form-panel">
+                    <h4 class="mb"><a class="btn btn-default">Add New Meter Reading</a></h4>
+
+                    <section id="unseen">
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                            <tr>
+                                <th>Created Date</th>
+                                <th class="numeric">Day Value</th>
+                                <th class="numeric">Peek Value</th>
+                                <th class="numeric">Off-Peek Value</th>
+                                <th class="numeric">Coincident Peak</th>
+                               
+                                <th colspan="2"></th>
+                               
+                            </tr>
+                            </thead>
+                            <tbody data-bind="foreach: MeterReadingArray">
+                            <tr class="data-centered">
+
+                                <td rowspan ="1">   <p data-bind="text: ReadingDate">    </p></td>
+                                <td class="numeric"><p data-bind="text: DayValue">       </p></td>
+                                <td class="numeric"><p data-bind="text: PeakValue">      </p></td>
+                                <td class="numeric"><p data-bind="text: OffPeakValue">   </p></td>
+                                <td class="numeric"><p data-bind="text: CoincidentPeak"> </p></td>
+
+                          
+                               
+                                <td rowspan="1" align="left"><a class="btn btn-primary btn-circle" ><i class="fa fa-list"></i> Edit </a></td>
+                                <td rowspan="1" align="left"><a class="btn btn-warning btn-circle" ><i class="fa fa-times"></i> Delete </a></td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+<!-- Below part has to add some div i gusess -->
+<style>
+    .validationMessage {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>
+<script src="~/Scripts/ko/MeterReadingDetails.js"></script>

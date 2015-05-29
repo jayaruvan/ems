@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "SubStationDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SubStationDetails</h2>
+
+<h2>SubStationDetails</h2>
+
+<div class="row mt">
+            <div class="col-sm-11 col-md-10 col-lg-9">
+                <div class="form-panel">
+                    <h4 class="mb">
+                       <input type="button"  class="btn btn-default"  value="Add New SubStation" data-bind="click:$root.CreateSubStation" />
+                    </h4>
+                          <section id="unseen">
+                <table class="table table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Areas Name</th>
+                        <th class="numeric">Substation Count</th>
+                        <th class="numeric">Substation Name</th>    
+               
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: SubStationArray">
+                    <tr>
+                        
+                        <td><p data-bind="text: Name"></p></td>
+                        <td ><p data-bind="text: SubStationDTO().length"></td>
+                        <td >
+
+                             <table class="table table-bordered table-condensed" >
+                                 <tbody data-bind="foreach: SubStationDTO">
+                                    <tr>
+                                        <td><p data-bind="text: Name"></p></td>  
+                                        <td class=""><a class="btn-link" data-bind="click: EditSubStation">Edit</a></td>
+                                        <td class=""><a class="btn-link" data-bind="click: $root.RemoveSubStation">Delete</a></td>                                                                              
+                                    </tr>
+                                </tbody>
+                             </table>
+
+ 
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+                </div>
+            </div>
+            <!-- col-lg-12-->
+        </div>
+<script src="~/Scripts/ko/Substation.js"></script>

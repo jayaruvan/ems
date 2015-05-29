@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "AreaDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>AreaDetails</h2>
+
+
+<!-- row start  List (1)-->
+ <div >
+<h3><i class="fa fa-angle-right"></i> AreaDetails</h3>
+
+
+<div class="row mt">
+    <div class="col-sm-11 col-md-10 col-lg-9">
+        <div class="form-panel">
+            
+            <h4 class="mb">
+                <input type="button"  class="btn btn-default"  value="Add New Area Office" data-bind="click:$root.CreateArea" />
+                </h4>
+
+            <section id="unseen">
+                <table class="table table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Province Name</th>
+                        <th class="numeric">Areas Count</th>
+                        <th class="numeric">Areas List</th>    
+               
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: ProvincesArray">
+                    <tr>
+                        <td><p data-bind="text: Name"></p></td>
+                        <td ><p data-bind="text: AreaDTO().length"></td>
+                        <td >
+
+                             <table class="table table-bordered table-condensed">
+                                 <tbody data-bind="foreach: AreaDTO">
+                                    <tr>
+                                       <td><p data-bind="text: Name"></p></td>  
+                                        <td class=""><a class="btn-link" data-bind="click: EditArea">Edit</a></td>
+                                        <td class=""><a class="btn-link" data-bind="click: $root.RemoveArea">Delete</a></td>                                                                              
+                                    </tr>
+                                </tbody>
+                             </table>
+
+ 
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <!-- col-lg-12-->
+</div>
+</div>
+<!-- /row -->
+
+
+
+<!-- Below part has to add some div i gusess -->
+<style>
+    .validationMessage {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>
+<script src="~/Scripts/ko/Area.js"></script>
+

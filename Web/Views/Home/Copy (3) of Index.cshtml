@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Present Meter List</h3>
+
+
+        <div class="row mt">
+            <div class="col-sm-11 col-md-10 col-lg-9">
+                <div class="form-panel">
+                    <h4 class="mb"><a class="btn btn-default"  data-bind="click:$root.CreateNewMeter">Add New Meter</a></h4>
+
+                    <section id="unseen">
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                            <tr>
+                                <th>Meter Serial</th>
+                                <th>Meter Name</th>
+                                <th class="numeric">Last Reading</th>
+                                <th colspan="2"></th>
+
+                            </tr>
+                            </thead>
+                            <tbody  data-bind="foreach: MetersArray">
+                            <tr class="data-centered">
+                                <td rowspan="1"><p data-bind="text: Serial"></p></td>
+                                <td data-bind="text: Name"></td>
+                                <td class="numeric" data-bind="text: LastReading" ></td>
+                                <td rowspan="1" align="centered" class=""><a class="btn-link" data-bind="click: EditMeter" >Edit</a></td>
+                                <td rowspan="1" align="centered" class=""><a class="btn-link" data-bind="click: DeleteMeter">Delete</a></td>
+                            </tr>
+             
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+            <!-- col-lg-12-->
+        </div>
+        <!-- /row -->        </section><script src="~/Scripts/ko/Meters.js"></script>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "ProvinceCreateEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="main-content">
+
+<section class="wrapper">
+<h3><i class="fa fa-angle-right"></i> Present Province List</h3>
+
+
+<div class="row mt">
+    <div class="col-sm-11 col-md-10 col-lg-9">
+        <div class="form-panel">
+            
+            <h4 class="mb">Add Province</h4>
+            <table class="table">
+        <tr>
+            <th colspan="3">Profile Information</th>
+        </tr>
+        <tr></tr>
+    <tbody data-bind='with: province'>
+        <tr>
+            <td>
+                <input class="input-large" data-bind='value: Name'  placeholder="Province Name"/>
+            </td>
+ 
+        </tr>
+    </tbody>
+</table>
+
+
+
+        <hr />
+        <button class="btn btn-small btn-success" data-bind='click: SaveProvince'>Save Profile</button>
+        <input class="btn btn-small btn-primary" type="button" value="Back To Profile List" data-bind="click:$root.BackToProvinceList" />
+
+        </div>
+    </div>
+    <!-- col-lg-12-->
+</div>
+
+
+
+</section>
+
+<!-- /MAIN CONTENT -->
+
+<!--main content end-->
+
+</section>
+
+
+
+
+<style>
+    .validationMessage {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>
+
+<script src="~/Scripts/ko/ProvinceCreateEdit.js"></script>

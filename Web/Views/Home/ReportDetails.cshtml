@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "MeterReading";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>  Reports  </h2>
+
+<br>
+
+<div class="form-panel">
+
+            <section id="unseen">
+                <table class="table table-bordered  table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Report Name</th>
+                        <th>Last Entry Date</th>
+                        <th>IP Address</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: ReportsArray">
+                    <tr>
+                        <td><p data-bind="text: Name"></p></td>
+                        <td><a class="numeric"><p data-bind="text: CreatedDate"></p></a></td>
+                        <td><a class="numeric"><p data-bind="text: ReportDate"></p></a></td>
+                        <td><a class="btn-link">View Report</a></td>
+                    </tr>
+                   
+
+                    </tbody>
+                </table>
+            </section>
+        </div>
+<script src="~/Scripts/ko/Report.js"></script>
